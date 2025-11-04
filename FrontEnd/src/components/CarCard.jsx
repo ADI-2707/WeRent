@@ -8,7 +8,7 @@ const CarCard = ({car}) => {
 
   return (
     <div 
-    onClick={() => {navigate('/car-details/${car._id}'); scrollTo(0,0)}}
+    onClick={() => {navigate(`/car-details/${car._id}`); scrollTo(0,0)}}
     className='group rounded-xl overflow-hidden shadow-lg hover:-translate-y-1 transition-all duration-500 cursor-pointer'>
       <div className='relative h-48 overflow-hidden'>
         <img src={car.image} alt="Car Image" className='w-full h-full object-cover transition-transform duration-500 group-hover:scale-105' />
@@ -28,7 +28,7 @@ const CarCard = ({car}) => {
         <div className='mt-4 grid grid-cols-2 gap-y-2 text-gray-600'>
             <div className='flex items-center text-sm text-muted-foreground'>
                 <img src={assets.users_icon} alt="" className='h-4 mr-2' />
-                <span>{car.sitting_capacity} Seats</span>
+                <span>{car.seating_capacity} Seats</span>
             </div>
             <div className='flex items-center text-sm text-muted-foreground'>
                 <img src={assets.fuel_icon} alt="" className='h-4 mr-2' />
