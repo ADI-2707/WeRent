@@ -443,7 +443,6 @@ All endpoints return JSON responses with a `success` boolean flag indicating whe
 
 ## Models
 
-### Models
 
 ### User Model
 ```javascript
