@@ -1,20 +1,33 @@
-# WeRent Backend API Documentation
+# 🚗 WeRent Backend API
 
-This document provides information about the available API endpoints in the WeRent backend service.
+WeRent is a car rental platform where users can rent cars and owners can list their vehicles.  
+This backend provides REST APIs for user authentication, car listings, bookings, and owner dashboard features.
 
-## Base URL
+## 🔗 Base URL
 ```
 http://localhost:3000/api
 ```
 
-## Authentication
-Most endpoints require JWT authentication. Include the JWT token in the Authorization header of your requests.
+
+## 🔐 Authentication
+Most endpoints require JWT authentication.
+
+Include the token in your request header:
+
 
 ```
 Authorization: <your_jwt_token>
 ```
 
-## Endpoints
+
+# 📂 API Categories
+- **User API**
+- **Car API (Public)**
+- **Owner API**
+- **Booking API**
+
+
+## 👤 USER API  
 
 ### 1. Register User
 Create a new user account.
@@ -129,7 +142,65 @@ Authorization: <your_jwt_token>
 }
 ```
 
-### 4. Change Role to Owner
+## 🚘 CAR API (Public)
+
+### 1. Get All Available Cars
+Retrieve all cars that are marked as available.
+
+- **URL**: `/cars`
+- **Method**: `GET`
+- **Authentication**: Not required
+
+#### Success Response
+```json
+{
+    "success": true,
+    "cars": [
+        {
+            "_id": "507f1f77bcf86cd799439011",
+            "name": "Toyota Camry",
+            "model": "2023",
+            "pricePerDay": 50,
+            "location": "New York",
+            "image": "https://ik.imagekit.io/werent/cars/camry.webp",
+            "isAvailable": true,
+            "owner": "507f1f77bcf86cd799439012"
+        }
+    ]
+}
+```
+
+### 2. Get Car Details
+Retrieve details for a single car by id.
+
+- **URL**: `/cars/:id`
+- **Method**: `GET`
+- **Authentication**: Not required
+
+#### Success Response
+```json
+{
+    "success": true,
+    "car": {
+        "_id": "507f1f77bcf86cd799439011",
+        "name": "Toyota Camry",
+        "model": "2023",
+        "pricePerDay": 50,
+        "location": "New York",
+        "image": "https://ik.imagekit.io/werent/cars/camry.webp",
+        "isAvailable": true,
+        "owner": {
+            "_id": "507f1f77bcf86cd799439012",
+            "name": "Alice Owner",
+            "email": "alice@example.com"
+        }
+    }
+}
+```
+
+## 🧑‍💼 OWNER API
+
+### 1. Change Role to Owner
 Change a user's role to owner, allowing them to list cars.
 
 - **URL**: `/owner/change-role`
@@ -157,7 +228,7 @@ Authorization: <your_jwt_token>
 }
 ```
 
-### 5. Add Car
+### 2. Add Car
 Add a new car listing.
 
 - **URL**: `/owner/add-car`
@@ -184,7 +255,7 @@ carData: {                 // JSON string containing car details
 }
 ```
 
-### 6. Get Owner Cars
+### 3. Get Owner Cars
 Retrieve all cars listed by the authenticated owner.
 
 - **URL**: `/owner/cars`
@@ -210,7 +281,7 @@ Retrieve all cars listed by the authenticated owner.
 }
 ```
 
-### 7. Toggle Car Availability
+### 4. Toggle Car Availability
 Toggle the availability status of a car.
 
 - **URL**: `/owner/toggle-car`
@@ -232,7 +303,7 @@ Toggle the availability status of a car.
 }
 ```
 
-### 8. Delete Car
+### 5. Delete Car
 Remove a car listing.
 
 - **URL**: `/owner/delete-car`
@@ -254,7 +325,7 @@ Remove a car listing.
 }
 ```
 
-### 9. Get Dashboard Data
+### 6. Get Dashboard Data
 Retrieve owner's dashboard statistics.
 
 - **URL**: `/owner/dashboard`
@@ -287,8 +358,9 @@ Retrieve owner's dashboard statistics.
     }
 }
 ```
+## 📅 BOOKING API
 
-### 10. Check Car Availability
+### 1. Check Car Availability
 Check if cars are available for the specified dates and location.
 
 - **URL**: `/booking/check-availability`
@@ -322,7 +394,7 @@ Check if cars are available for the specified dates and location.
 }
 ```
 
-### 11. Create Booking
+### 2. Create Booking
 Create a new car booking.
 
 - **URL**: `/booking/create`
@@ -354,7 +426,7 @@ Create a new car booking.
 }
 ```
 
-### 12. Get User Bookings
+### 3. Get User Bookings
 Retrieve all bookings made by the authenticated user.
 
 - **URL**: `/booking/user`
@@ -382,7 +454,7 @@ Retrieve all bookings made by the authenticated user.
 }
 ```
 
-### 13. Get Owner Bookings
+### 4. Get Owner Bookings
 Retrieve all bookings for cars owned by the authenticated owner.
 
 - **URL**: `/booking/owner`
@@ -415,7 +487,7 @@ Retrieve all bookings for cars owned by the authenticated owner.
 }
 ```
 
-### 14. Change Booking Status
+### 5. Change Booking Status
 Update the status of a booking (Owner only).
 
 - **URL**: `/booking/change-status`
@@ -441,7 +513,7 @@ Update the status of a booking (Owner only).
 ## Error Handling
 All endpoints return JSON responses with a `success` boolean flag indicating whether the request was successful. In case of errors, a `message` field will be included with a description of the error.
 
-## Models
+## 🧱 Models Overview
 
 
 ### User Model
@@ -483,3 +555,23 @@ All endpoints return JSON responses with a `success` boolean flag indicating whe
     timestamps: true       // includes createdAt and updatedAt
 }
 ```
+## 🏁 Run Backend Locally
+```
+git clone https://github.com/ADI-2707/WeRent.git 
+cd WeRent/BackEnd
+npm install
+npm run dev
+```
+
+## 🤝 Contributing
+PRs are welcome!  
+For major changes, please open an issue first to discuss what you would like to change.
+
+
+## 🌐 Connect With Me
+**LinkedIn:** https://www.linkedin.com/in/aditya-sing-dev/  
+**GitHub:** https://github.com/ADI-2707  
+
+
+## ⭐ Support
+If this project helped you, consider giving it a **star** ⭐

@@ -5,7 +5,7 @@ This document provides information about the Frontend implementation of the WeRe
 ## Technology Stack
 
 - **Framework**: React + Vite
-- **Styling**: CSS
+- **Styling**: CSS, Tailwindcss
 - **State Management**: React Context API
 - **Router**: React Router DOM
 
@@ -225,3 +225,139 @@ The application is fully responsive with breakpoints:
 - Mobile: < 768px
 - Tablet: 768px - 1024px
 - Desktop: > 1024px
+
+## Scripts
+
+The `FrontEnd/package.json` includes the usual scripts. Run them from the `FrontEnd` folder.
+
+```powershell
+npm run dev      
+npm run build    
+npm run preview  
+```
+
+If you use `pnpm` or `yarn` swap the command accordingly.
+
+## Running the Frontend with the Backend
+
+1. Start the backend (from `BackEnd`):
+
+```powershell
+cd ..\BackEnd
+npm install
+npm run dev 
+```
+
+2. Start the frontend (from `FrontEnd`):
+
+```powershell
+cd ..\FrontEnd
+npm install
+npm run dev
+```
+
+Open the dev URL printed by Vite (usually `http://localhost:5173`). The frontend will call the API at `VITE_API_URL`.
+
+## AuthContext (shape & example)
+
+The app uses a React Context for authentication. A minimal `AuthContext` shape looks like:
+
+```javascript
+// AuthContext value
+{
+   user: null | { _id, name, email, role, image },
+   token: null | string,
+   login: async (email, password) => { /* calls POST /api/user/login */ },
+   register: async (data) => { /* calls POST /api/user/register */ },
+   logout: () => { /* clears token & user */ },
+   fetchUser: async () => { /* GET /api/user/data */ }
+}
+```
+
+Use `Authorization` header for protected requests:
+
+```
+Authorization: <token>
+```
+
+## API Usage Examples
+
+Below are short examples for commonly used API calls.
+
+1) Login (fetch)
+
+```javascript
+const res = await fetch(`${import.meta.env.VITE_API_URL}/user/login`, {
+   method: 'POST',
+   headers: { 'Content-Type': 'application/json' },
+   body: JSON.stringify({ email, password })
+});
+const json = await res.json();
+if (json.success) localStorage.setItem('token', json.token);
+```
+
+2) Get available cars (fetch)
+
+```javascript
+const res = await fetch(`${import.meta.env.VITE_API_URL}/cars`);
+const { cars } = await res.json();
+```
+
+3) Create booking (fetch, authenticated)
+
+```javascript
+const token = localStorage.getItem('token');
+await fetch(`${import.meta.env.VITE_API_URL}/booking/create`, {
+   method: 'POST',
+   headers: {
+      'Content-Type': 'application/json',
+      'Authorization': token
+   },
+   body: JSON.stringify({ car: carId, pickupDate, dropDate })
+});
+```
+
+
+## Component Props Examples
+
+Here are common props for key components to make integration easier.
+
+- `CarCard` props
+
+```javascript
+<CarCard
+   car={{ _id, name, model, pricePerDay, image, location, isAvailable }}
+   onBook={(carId) => { /* open booking modal */ }}
+/>
+```
+
+- `Login` props
+
+```javascript
+<Login onSuccess={(tokenOrUser) => { /* set auth state */ }} />
+```
+
+## Deployment
+
+Build the production bundle and serve it with any static server or deploy to Vercel/Netlify:
+
+```powershell
+cd FrontEnd
+npm run build
+
+```
+
+When deploying, set `VITE_API_URL` to the production backend URL.
+
+## 🤝 Contributing
+PRs are welcome!  
+For major changes, please open an issue first to discuss what you would like to change.
+
+
+## 🌐 Connect With Me
+**LinkedIn:** https://www.linkedin.com/in/aditya-sing-dev/  
+**GitHub:** https://github.com/ADI-2707  
+
+
+## ⭐ Support
+If this project helped you, consider giving it a **star** ⭐

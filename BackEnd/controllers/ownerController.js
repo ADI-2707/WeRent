@@ -118,9 +118,9 @@ export const getDashboardData = async (req, res) => {
     }
 
     const cars = await Car.find({ owner: _id });
-    const bookings = (
-      await Booking.find({ owner: _id }).populate("car")
-    ).toSorted({ createdAt: -1 });
+    const bookings = await Booking.find({ owner: _id })
+      .populate("car")
+      .sort({ createdAt: -1 });
 
     const pendingBookings = await Booking.find({
       owner: _id,
@@ -143,6 +143,7 @@ export const getDashboardData = async (req, res) => {
       pendingBookings: pendingBookings.length,
       completedBookings: completedBookings.length,
       recentBookings: bookings.slice(0, 3),
+      monthlyRevenue,
     };
 
     res.json({ success: true, dashboardData });
@@ -155,18 +156,17 @@ export const getDashboardData = async (req, res) => {
 //API to update user image
 export const updateUsertImage = async (req, res) => {
   try {
+    const { _id } = req.user;
 
-    const { _id} = req.user;
-
-    const imageFile = req.file
-    const fileBuffer = fs.readFileSync(imageFile.path)
+    const imageFile = req.file;
+    const fileBuffer = fs.readFileSync(imageFile.path);
     const response = await imagekit.upload({
       file: fileBuffer,
       fileName: imageFile.originalname,
       folder: "/users",
-    })
+    });
 
-     var optimizedImageURL = imagekit.url({
+    var optimizedImageURL = imagekit.url({
       path: response.filePath,
       transformation: [
         { width: "400" }, // Width resizing
@@ -175,11 +175,10 @@ export const updateUsertImage = async (req, res) => {
       ],
     });
 
-    const image = optimizedImageURL
+    const image = optimizedImageURL;
 
-    await User.findByIdAndUpdate(_id, {image})
-    res.json({success: true, message: "Image updated!"})
-
+    await User.findByIdAndUpdate(_id, { image });
+    res.json({ success: true, message: "Image updated!" });
   } catch (error) {
     console.log(error.message);
     res.json({ success: false, message: error.message });

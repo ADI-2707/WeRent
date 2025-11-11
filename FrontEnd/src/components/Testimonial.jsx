@@ -1,6 +1,6 @@
-import React from "react";
 import Title from "./Title";
 import { assets } from "../assets/assets";
+import { motion } from "motion/react";
 
 const Testimonial = () => {
   const testimonials = [
@@ -8,24 +8,27 @@ const Testimonial = () => {
       name: "Divya Patnayak",
       location: "Mumbai, Maharashtra",
       image: assets.testimonial_image_1,
-      testimonial:"I've rented cars from various sites, but the experience with WeRent was exceptional!",
+      testimonial:
+        "I've rented cars from various sites, but the experience with WeRent was exceptional!",
     },
     {
       name: "Sureeli Singh",
       address: "New Delhi, India",
       image: assets.testimonial_image_2,
-      testimonial:"WeRent made our trip so much better. The car was delivered right to my door , and the customer service was fantastic!",
+      testimonial:
+        "WeRent made our trip so much better. The car was delivered right to my door , and the customer service was fantastic!",
     },
     {
       name: "Suhana Khan",
       address: "Hyderabad, Telangana",
       image: assets.testimonial_image_1,
-      testimonial:"I highly recommend WeRent! Their fleet of cars is amazing, and I always feel like I' getting the best deal with excellent service.",
-    }
+      testimonial:
+        "I highly recommend WeRent! Their fleet of cars is amazing, and I always feel like I' getting the best deal with excellent service.",
+    },
   ];
 
   return (
-    <div className="py-28 px-6 md:px-16 lg:px-24 xl:px-44">
+    <motion.div className="py-28 px-6 md:px-16 lg:px-24 xl:px-44">
       <Title
         title="Don't just take our words"
         subTitle="Hear what our users say about us. We're always looking for ways to improve. If you have a positive
@@ -34,7 +37,11 @@ const Testimonial = () => {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-18">
         {testimonials.map((testimonial, index) => (
-          <div
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: index * 0.2, ease: 'easeOut' }}
+            viewport={{ once: true, amount: 0.3 }}
             key={index}
             className="bg-white p-6 rounded-xl shadow-lg hover:-translate-y-1 transition-all duration-500"
           >
@@ -59,10 +66,10 @@ const Testimonial = () => {
             <p className="text-gray-500 max-w-90 mt-4 font-light">
               "{testimonial.testimonial}"
             </p>
-          </div>
+          </motion.div>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 };
 
