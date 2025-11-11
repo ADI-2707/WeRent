@@ -19,8 +19,6 @@ Lightweight car-rental platform. This repository contains a React + Vite fronten
 - Auth: JSON Web Tokens (JWT)
 - Image uploads: ImageKit (used in controllers)
 
----
-
 ## Quick start
 
 Requirements: Node.js, npm, MongoDB (or connection string)
@@ -40,7 +38,7 @@ node server.js
 cd FrontEnd
 npm install
 npm run dev
----
+```
 
 ## Where to find docs
 
