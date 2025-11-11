@@ -1,7 +1,7 @@
 # WeRent
 
 Lightweight car-rental platform. This repository contains a React + Vite frontend and an Express + MongoDB backend that together provide a peer-to-peer car listing and booking experience.
----
+
 
 ## Key features
 
