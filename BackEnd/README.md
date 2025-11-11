@@ -569,5 +569,5 @@ For major changes, please open an issue first to discuss what you would like to 
 
 
 ## 🌐 Connect With Me
-**LinkedIn:** https://www.linkedin.com/in/aditya-sing-dev/  
-**GitHub:** https://github.com/ADI-2707  
+- **LinkedIn:** https://www.linkedin.com/in/aditya-sing-dev/  
+- **GitHub:** https://github.com/ADI-2707  
