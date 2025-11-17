@@ -201,23 +201,57 @@ The application uses React Context API for state management with the following c
 
 The application uses React Router for navigation with protected routes for authenticated users and owners:
 
-```javascript
-// Public Routes
-/               // Home page
-/cars           // Car listings
-/car/:id        // Car details
-/login          // Login/Register
 
-// Protected User Routes
-/bookings       // User's bookings
-/profile        // User profile
+**Public Routes**
 
-// Protected Owner Routes
-/owner/dashboard        // Owner dashboard
-/owner/cars            // Manage cars
-/owner/add-car         // Add new car
-/owner/bookings        // Manage bookings
-```
+  - `/`       =>          Home page
+      <p align='center'>
+      <img src='./images/home.png' width=300>
+      <img src='./images/home2.png' width=300>
+      <img src='./images/home3.png' width=300>
+      <img src='./images/home4.png' width=300>
+      </p>
+  - `/cars`      =>      Car listings
+      <p align='center'>
+      <img src='./images/Cars.png' width=600>
+      </p>
+
+  - `/car/:id`        => Car details
+      <p align='center'>
+      <img src='./images/cardetail.png' width=600>
+      </p>
+  - `/login`          => Login/Register
+      <p align='center'>
+      <img src='./images/login.png' width=300>
+      <img src='./images/register.png' width=300>
+      </p>
+
+**Protected User Routes**
+
+ - `/bookings `      => User's bookings
+      <p align='center'>
+      <img src='./images/userbooking.png' width=600>
+      </p>
+
+**Protected Owner Routes**
+
+ - `/owner `       => Owner dashboard
+      <p align='center'>
+      <img src='./images/dashboard.png' width=600>
+      </p>
+ - `/owner/add-car `        => Add new car
+      <p align='center'>
+      <img src='./images/addcar.png' width=600>
+      </p>
+ - `/owner/manage-cars`        => Manage cars
+      <p align='center'>
+      <img src='./images/mcars.png' width=600>
+      </p>
+ - `/owner/manage-bookings `       => Manage bookings
+      <p align='center'>
+      <img src='./images/mbooking.png' width=600>
+      </p>
+
 
 ## Responsive Design
 

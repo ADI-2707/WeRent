@@ -1,7 +1,11 @@
 # WeRent
 
 Lightweight car-rental platform. This repository contains a React + Vite frontend and an Express + MongoDB backend that together provide a peer-to-peer car listing and booking experience.
----
+
+<p align='center'>
+    <img src='FrontEnd/images/home.png' width=>
+</p>
+
 
 ## Key features
 
@@ -40,12 +44,16 @@ node server.js
 cd FrontEnd
 npm install
 npm run dev
----
+```
 
 ## Where to find docs
 
 - Backend API documentation: `BackEnd/README.md`
 - Frontend documentation and usage: `FrontEnd/README.md`
+
+## Connect With Me
+**LinkedIn:** https://www.linkedin.com/in/aditya-sing-dev/  
+**GitHub:** https://github.com/ADI-2707 
 
 ## Contributing
 
