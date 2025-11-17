@@ -7,6 +7,7 @@ Lightweight car-rental platform. This repository contains a React + Vite fronten
 </p>
 
 
+
 ## Key features
 
 - User registration & login (JWT)
@@ -22,8 +23,6 @@ Lightweight car-rental platform. This repository contains a React + Vite fronten
 - Database: MongoDB Atlas (mongoose)
 - Auth: JSON Web Tokens (JWT)
 - Image uploads: ImageKit (used in controllers)
-
----
 
 ## Quick start
 
@@ -58,3 +57,7 @@ npm run dev
 ## Contributing
 
 Any contributions are welcome. Open a PR and include a short description and quick test steps.
+
+## Connect With Me
+- **LinkedIn:** https://www.linkedin.com/in/devadi 
+- **GitHub:** https://github.com/ADI-2707
