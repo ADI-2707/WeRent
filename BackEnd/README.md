@@ -1,15 +1,15 @@
-# 🚗 WeRent Backend API
+#  WeRent Backend API
 
 WeRent is a car rental platform where users can rent cars and owners can list their vehicles.  
 This backend provides REST APIs for user authentication, car listings, bookings, and owner dashboard features.
 
-## 🔗 Base URL
+##  Base URL
 ```
 http://localhost:3000/api
 ```
 
 
-## 🔐 Authentication
+##  Authentication
 Most endpoints require JWT authentication.
 
 Include the token in your request header:
@@ -20,14 +20,14 @@ Authorization: <your_jwt_token>
 ```
 
 
-# 📂 API Categories
+#  API Categories
 - **User API**
 - **Car API (Public)**
 - **Owner API**
 - **Booking API**
 
 
-## 👤 USER API  
+##  USER API  
 
 ### 1. Register User
 Create a new user account.
@@ -198,7 +198,7 @@ Retrieve details for a single car by id.
 }
 ```
 
-## 🧑‍💼 OWNER API
+##  OWNER API
 
 ### 1. Change Role to Owner
 Change a user's role to owner, allowing them to list cars.
@@ -358,7 +358,7 @@ Retrieve owner's dashboard statistics.
     }
 }
 ```
-## 📅 BOOKING API
+##  BOOKING API
 
 ### 1. Check Car Availability
 Check if cars are available for the specified dates and location.
@@ -513,7 +513,7 @@ Update the status of a booking (Owner only).
 ## Error Handling
 All endpoints return JSON responses with a `success` boolean flag indicating whether the request was successful. In case of errors, a `message` field will be included with a description of the error.
 
-## 🧱 Models Overview
+##  Models Overview
 
 
 ### User Model
@@ -563,11 +563,11 @@ npm install
 npm run dev
 ```
 
-## 🤝 Contributing
+##  Contributing
 PRs are welcome!  
 For major changes, please open an issue first to discuss what you would like to change.
 
 
-## 🌐 Connect With Me
+##  Connect With Me
 - **LinkedIn:** https://www.linkedin.com/in/aditya-sing-dev/  
 - **GitHub:** https://github.com/ADI-2707  
