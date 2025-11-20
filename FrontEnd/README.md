@@ -383,11 +383,11 @@ npm run build
 
 When deploying, set `VITE_API_URL` to the production backend URL.
 
-## 🤝 Contributing
+##  Contributing
 PRs are welcome!  
 For major changes, please open an issue first to discuss what you would like to change.
 
 
-## 🌐 Connect With Me
+##  Connect With Me
 - **LinkedIn:** https://www.linkedin.com/in/aditya-sing-dev/  
 - **GitHub:** https://github.com/ADI-2707  
