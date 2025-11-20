@@ -50,10 +50,6 @@ npm run dev
 - Backend API documentation: `BackEnd/README.md`
 - Frontend documentation and usage: `FrontEnd/README.md`
 
-## Connect With Me
-**LinkedIn:** https://www.linkedin.com/in/aditya-sing-dev/  
-**GitHub:** https://github.com/ADI-2707 
-
 ## Contributing
 
 Any contributions are welcome. Open a PR and include a short description and quick test steps.
