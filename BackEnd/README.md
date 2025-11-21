@@ -142,7 +142,7 @@ Authorization: <your_jwt_token>
 }
 ```
 
-## 🚘 CAR API (Public)
+##  CAR API (Public)
 
 ### 1. Get All Available Cars
 Retrieve all cars that are marked as available.
@@ -555,7 +555,7 @@ All endpoints return JSON responses with a `success` boolean flag indicating whe
     timestamps: true       // includes createdAt and updatedAt
 }
 ```
-## 🏁 Run Backend Locally
+##  Run Backend Locally
 ```
 git clone https://github.com/ADI-2707/WeRent.git 
 cd WeRent/BackEnd
