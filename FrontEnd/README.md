@@ -206,10 +206,12 @@ The application uses React Router for navigation with protected routes for authe
 
   - `/`       =>          Home page
       <p align='center'>
-      <img src='./images/home.png' width=300>
-      <img src='./images/home2.png' width=300>
-      <img src='./images/home3.png' width=300>
-      <img src='./images/home4.png' width=300>
+      <img src='./images/home.png' width=600>
+      </p>
+      <p align='center'>
+      <img src='./images/home2.png' width=200>
+      <img src='./images/home3.png' width=200>
+      <img src='./images/home4.png' width=200>
       </p>
   - `/cars`      =>      Car listings
       <p align='center'>
